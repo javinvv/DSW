@@ -1,5 +1,10 @@
 package Animales.animal.models;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "animals")
 public class animal {
     private int id;
     private String nombre;
