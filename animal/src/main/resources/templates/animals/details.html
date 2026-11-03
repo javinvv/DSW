@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .header{
+            background-color: dodgerblue;
+            border: solid 1px dodgerblue;
+        }
+    </style>
+</head>
+<body>
+<div class = "header"><h3>Animalia</h3></div>
+  <h1>Detalles</h1>
+    <div th:if="${animal} != null">
+      <td><p>Id: <span th:text="${animal.id}"></span></p></td>
+        <td><p>Nombre: <span th:text="${animal.nombre}"></span></p></td>
+        <td><p>Vida: <span th:text="${animal.vida}"></span></p></td>
+        <td><p>Extinto: <span th:text="${animal.extinto}"></span></p></td>
+    </div>
+</body>
+</html>

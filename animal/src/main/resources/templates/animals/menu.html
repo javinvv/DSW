@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
+    <style>
+        body{
+            font-family: sans-serif;
+            padding: 20px;
+        }
+
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td{
+            padding: 10px;
+            border-bottom: 1px solid lightgrey;
+            text-align: left;
+        }
+
+        .botones{
+            text-align: center;
+        }
+        h3{
+            background-color: dodgerblue;
+            margin: 20px;
+        }
+        .header{
+            border: solid 1px dodgerblue;
+            background-color: dodgerblue;
+        }
+    </style>
+</head>
+<body>
+<div class = "header"><h3>Animalia</h3></div>
+<h1>Listado de Animales</h1>
+    <table>
+        <thead>
+        <tr><th>Id</th><th>Nombre</th><th>Vida media</th>
+            <th>Extinto</th><th class = "botones">Acciones</th></tr>
+        </thead>
+        <tbody>
+            <tr th:each="a : ${animals}">
+                <td th:text="${a.id}"></td>
+                <td th:text="${a.nombre}"></td>
+                <td th:text="${a.vida}"></td>
+                <td th:text="${a.extinto ? 'Sí' : 'No'}"></td>
+                <td><a class="btn btn-dark btn sm" th:href="@{/animals/{id}(id=${a.id})}">Detalles</a></td>
+                <td><a class="btn btn-dark btn sm" th:href="@{/animals/edit/{id}(id=${a.id})}">Editar</a></td>
+                <form th:action="@{/animals/borrar/{id}(id=${a.id})}" method="post" style="display:inline;" onsubmit="return confirm('¿Seguro que quieres eliminar a este animal?');">
+                    <td><a class="btn btn-dark btn sm" th:href="@{/animals/borrar/{id}(id=${a.id})}">Borrar</a></td>
+                </form>
+            </tr>
+            <tr>
+                <td><a class="btn btn-dark btn sm" th:href="@{/animals/crear}">Crear Nuevo Animal</a></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

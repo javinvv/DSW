@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header th:fragment="cabeceraComun">
+<nav>
+    <p><strong>Menu</strong></p>
+    <ul>
+        <li><a th:href="@{/Index}">Saludo</a></li>
+        <li><a th:href="@{/despedida}">Despedida</a></li>
+    </ul>
+</nav>
+</header>
+</body>
+</html>
