@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+/* Barra superior azul */
+.navbar {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+}
+
+/* Contenedor del contenido */
+.container {
+    padding: 30px 40px;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin-bottom: 15px;
+    color: #333333;
+}
+
+.link-crear {
+    display: inline-block;
+    color: #007bff;
+    text-decoration: underline;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px 8px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+thead tr {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+tbody tr {
+    border-bottom: 1px solid #eeeeee;
+}
+
+/* Botones de acciones */
+.acciones {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-accion {
+    padding: 6px 14px;
+    background-color: white;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn-detalles {
+    border: 1px solid #28a745;
+    color: blue;
+}
+
+.btn-editar {
+    border: 1px solid #ffc107;
+    color: #ffc107;
+}
+
+.btn-borrar {
+    border: 1px solid #dc3545;
+    color: #dc3545;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalles del Animal</title>
+    <!-- El link CSS debe ir siempre dentro del head -->
+    <link rel="stylesheet" th:href="@{/css/detalles.css}">
+</head>
+<body>
+
+<div class="contenedor">
+    <h2>Detalles del Animal</h2>
+
+    <div class="detalle-card">
+        <div class="detalle-row">
+            <span class="label">ID:</span>
+            <span class="value" th:text="${animal.id}">1</span>
+        </div>
+        <div class="detalle-row">
+            <span class="label">Nombre:</span>
+            <span class="value" th:text="${animal.nombre}">Dodo</span>
+        </div>
+        <div class="detalle-row">
+            <span class="label">Vida media:</span>
+            <span class="value" th:text="${animal.vidaMedia}">30</span>
+        </div>
+        <div class="detalle-row">
+            <span class="label">Extinto:</span>
+            <span class="value" th:text="${animal.extinto}">true</span>
+        </div>
+    </div>
+
+    <div class="acciones">
+        <a th:href="@{/animals/index}" class="btn-volver">Volver al listado</a>
+    </div>
+</div>
+
+</body>
+</html>

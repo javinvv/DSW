@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" th:href="@{/css/editar.css}">
+  <title>Editar Animal</title>
+</head>
+<body>
+
+<div class="contenedor">
+  <h2>Editar Animal</h2>
+
+  <form action="#" th:action="@{/animals/actualizar}" th:object="${animal}" method="post">
+    <input type="hidden" th:field="*{id}">
+
+    <div class="detalle-row">
+      <span class="label">Nombre:</span>
+      <input type="text" th:field="*{nombre}">
+    </div>
+    <div th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" style="color: red; font-size: 0.85rem; margin-bottom: 10px;"></div>
+
+    <div class="detalle-row">
+      <span class="label">Vida media:</span>
+      <input type="text" th:field="*{vidaMedia}">
+    </div>
+    <div th:if="${#fields.hasErrors('vidaMedia')}" th:errors="*{vidaMedia}" style="color: red; font-size: 0.85rem; margin-bottom: 10px;"></div>
+
+    <div class="checkbox-row">
+      <input type="checkbox" id="extinto" th:field="*{extinto}">
+      <label for="extinto" class="label" style="margin-bottom: 0;">¿Está extinto?</label>
+    </div>
+
+    <div class="acciones">
+      <button type="submit" class="btn-guardar">Guardar cambios</button>
+      <a th:href="@{/animals/index}" class="btn-volver">Volver al listado</a>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>

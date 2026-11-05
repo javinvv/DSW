@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Borrar</title>
+    <link rel="stylesheet" th:href="@{/css/borrar.css}">
+</head>
+<body>
+<h1>¿Seguro que deseas borrar este animal?</h1>
+<div class="contenedor">
+    <h2>Detalles del Animal</h2>
+
+    <div class="detalle-card">
+        <div class="detalle-row">
+            <span class="label">ID:</span>
+            <span class="value" th:text="${animal.id}">1</span>
+        </div>
+        <div class="detalle-row">
+            <span class="label">Nombre:</span>
+            <span class="value" th:text="${animal.nombre}">Dodo</span>
+        </div>
+        <div class="detalle-row">
+            <span class="label">Vida media:</span>
+            <span class="value" th:text="${animal.vidaMedia}">30</span>
+        </div>
+        <div class="detalle-row">
+            <span class="label">Extinto:</span>
+            <span class="value" th:text="${animal.extinto}">true</span>
+        </div>
+    </div>
+
+    <div class="acciones">
+        <!-- Formulario que ejecuta el borrado definitivo por POST -->
+        <form th:action="@{/animals/borrar/{id}(id=${animal.id})}" method="post">
+            <button type="submit" class="btn-borrar">Eliminar</button>
+        </form>
+
+        <!-- Botón para volver atrás sin borrar -->
+        <a th:href="@{/animals/index}" class="btn-volver">Cancelar</a>
+    </div>
+</body>
+</html>
