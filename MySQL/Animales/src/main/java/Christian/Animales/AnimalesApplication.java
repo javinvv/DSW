@@ -1,4 +1,4 @@
-package Javi.Animales;
+package Christian.Animales;
 
 import Christian.Animales.models.Animal;
 import Christian.Animales.repository.AnimalRepository;

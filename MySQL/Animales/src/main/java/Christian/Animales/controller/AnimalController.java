@@ -1,7 +1,7 @@
-package Javi.Animales.controller;
+package Christian.Animales.controller;
 
-import Javi.Animales.models.Animal;
-import Javi.Animales.services.AnimalService;
+import Christian.Animales.models.Animal;
+import Christian.Animales.services.AnimalService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;

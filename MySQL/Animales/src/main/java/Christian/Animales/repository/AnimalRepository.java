@@ -1,5 +1,5 @@
 //Puente de comunicacion entre aplicacion y BD
-package Javi.Animales.repository;
+package Christian.Animales.repository;
 
 import Christian.Animales.models.Animal;
 import org.springframework.data.jpa.repository.JpaRepository;

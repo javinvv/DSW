@@ -52,7 +52,7 @@ public class AnimalController {
     public String edit (@PathVariable int id, Model model){
         animal a = as1.findById(id);
         model.addAttribute("animal", a);
-        return "/animals/edit";
+        return "animals/edit";
     }
     @PostMapping("/animals/edit/{id}")
     public String edit(@PathVariable("id") int id, @Valid @ModelAttribute("animal") animal an, BindingResult bindingResult){
